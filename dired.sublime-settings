@@ -16,10 +16,6 @@
   // Showing hidden files by default
   "dired_show_hidden_files": true,
 
-  // Customize the patterns used to determine if a file should be hidden
-  // e.g. [".*", "__pycache__", "*.pyc"]
-  "dired_hidden_files_patterns": [".*"],
-
   // (ST3 Only) shows a FileBrowser or a jump list view in new window by default
   // false: hijacking is disabled
   // "jump_list": shows the project jump list

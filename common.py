@@ -272,7 +272,11 @@ class DiredBaseCommand:
     def is_hidden(self, filename, path, goto=''):
         if not (path or goto):  # special case for ThisPC
             return False
-        tests = self.view.settings().get('dired_hidden_files_patterns', ['.*'])
+        settings = self.view.settings()
+        file_tests = settings.get('file_exclude_patterns', [])
+        folder_tests = settings.get('folder_exclude_patterns', [])
+
+        tests = file_tests + folder_tests
         if isinstance(tests, str):
             tests = [tests]
         if any(fnmatch.fnmatch(filename, pattern) for pattern in tests):
